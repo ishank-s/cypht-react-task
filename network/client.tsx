@@ -9,5 +9,8 @@ export const fetchCountries = async (): Promise<Country[]> => {
   const res = await fetch(userCountriesURL);
   const data = await res.json();
 
-  return data.map(({ name, flag }: Country) => ({ name, flag } as Country));
+  return data.map(
+    ({ name, flag, alpha2Code }: Country) =>
+      ({ name, flag, alpha2Code } as Country)
+  );
 };

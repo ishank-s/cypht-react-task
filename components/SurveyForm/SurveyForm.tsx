@@ -1,8 +1,9 @@
+import { Formik } from "formik";
 import { Country } from "../../model/Country";
 import { User } from "../../model/User";
 
 import React, { ChangeEvent } from "react";
-import { useFormik, Field } from "formik";
+import { useFormik } from "formik";
 
 type PersonalInfoFormProps = User & {
   countryList: Country[];
@@ -23,7 +24,7 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
   return (
     <>
       Personal Info form
-      <label htmlFor="fullName">fullName </label>
+      <label htmlFor="fullName">LULNAME </label>
       <input
         id="fullName"
         name="fullName"
@@ -40,18 +41,13 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
         value={email}
       />
       <label htmlFor="country">country</label>
-      <select
+      <input
         id="country"
         name="country"
+        type="country"
         onChange={handleChange}
         value={country}
-      >
-        {countryList.map(country => (
-          <option key={country.alpha2Code} value={country.alpha2Code}>
-            {country.name}
-          </option>
-        ))}
-      </select>
+      />
       <label htmlFor="age">age</label>
       <input
         id="age"
