@@ -4,6 +4,7 @@ import { fetchCountries } from "../network/client";
 import PersonalInfoForm from "../components/PersonalInfoForm";
 import SurveyForm from "../components/SurveyForm";
 import SurveySummary from "../components/SurveySummary";
+import ThemeChangeButton from "../components/ThemeChangeButton";
 import { ThemeProvider } from "../hooks/useTheme";
 import { AppWrapper, StyledForm } from "../styles/pages/globalStyles";
 
@@ -54,6 +55,7 @@ const Home: NextPage<{ countries: Country[] }> = props => {
 
   return (
     <ThemeProvider>
+      <ThemeChangeButton />
       <AppWrapper>
         <h1>Survey Bot</h1>
         <h3>Please fill out the personal details to proceed.</h3>

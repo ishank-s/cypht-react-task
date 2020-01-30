@@ -1,1 +1,1 @@
-exprot {default} from './ThemeCangeButton'
+export { default } from "./ThemeChangeButton";
