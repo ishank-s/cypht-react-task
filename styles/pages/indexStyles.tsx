@@ -6,9 +6,13 @@ export const AppWrapper = styled.div`
   width: 100vw;
   color: ${props => props.theme.body};
   overflow: hidden;
+  padding: 5%;
 `;
 
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  box-shadow: ${props => props.theme.boxShadow};
+  border-radius: 4px;
+  padding: 1.5em;
 `;

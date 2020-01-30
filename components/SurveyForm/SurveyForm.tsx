@@ -13,8 +13,8 @@ const SurveyForm: React.SFC<SurveyFormProps> = ({
 }: SurveyFormProps) => {
   return (
     <>
-      Question form
-      <label htmlFor="answer">answer </label>
+      Where are you from?
+      <label htmlFor="answer">answer</label>
       <input
         id="answer"
         name="answer"
