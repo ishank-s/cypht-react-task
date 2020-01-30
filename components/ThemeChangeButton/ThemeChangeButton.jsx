@@ -40,6 +40,7 @@ export default props => {
           themestate={themeState}
           onClick={themeState.toggle}
           style={props}
+          key={key}
         >
           {!item ? "🔅" : "☾"}
         </ButtonIconWrapper>

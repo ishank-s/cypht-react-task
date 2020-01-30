@@ -6,8 +6,8 @@ import SurveyForm from "../components/SurveyForm";
 import SurveySummary from "../components/SurveySummary";
 import ThemeChangeButton from "../components/ThemeChangeButton";
 import { ThemeProvider } from "../hooks/useTheme";
-import { AppWrapper, StyledForm } from "../styles/pages/globalStyles";
-
+import { AppWrapper, StyledForm } from "../styles/pages/indexStyles";
+import GlobalStyles from "../styles/global";
 import { useFormik } from "formik";
 import { useState } from "react";
 
@@ -56,6 +56,7 @@ const Home: NextPage<{ countries: Country[] }> = props => {
   return (
     <ThemeProvider>
       <ThemeChangeButton />
+      <GlobalStyles />
       <AppWrapper>
         <h1>Survey Bot</h1>
         <h3>Please fill out the personal details to proceed.</h3>
