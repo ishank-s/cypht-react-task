@@ -28,6 +28,7 @@ const Home: NextPage<{ countries: Country[] }> = props => {
   });
   const {
     handleChange,
+    handleSubmit,
     values: { fullName, email, country, age, gender, answer }
   } = formik;
 
@@ -60,14 +61,19 @@ const Home: NextPage<{ countries: Country[] }> = props => {
       <AppWrapper>
         <h1>Survey Bot</h1>
         <h3>Please fill out the personal details to proceed.</h3>
-        <StyledForm onSubmit={formik.handleSubmit}>{allSteps[step]}</StyledForm>
+        <StyledForm onSubmit={formik.handleSubmit}>
+          {allSteps[step]}
+
+          {step === allSteps.length - 1 && (
+            <button type="submit">Finito!</button>
+          )}
+        </StyledForm>
         {step > 0 && (
           <button onClick={() => setStep(step => step - 1)}>prev</button>
         )}
         {step < allSteps.length - 1 && (
           <button onClick={() => setStep(step => step + 1)}>next</button>
         )}
-        {step === allSteps.length - 1 && <button type="submit">Finito!</button>}
       </AppWrapper>
     </ThemeProvider>
   );
