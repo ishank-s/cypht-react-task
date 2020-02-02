@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import { StyledInput } from "../MaterialInput";
 
 type SurveyFormProps = {
   handleChange: (
@@ -14,11 +15,9 @@ const SurveyForm: React.SFC<SurveyFormProps> = ({
   return (
     <>
       Where are you from?
-      <label htmlFor="answer">answer</label>
-      <input
+      <StyledInput
         id="answer"
         name="answer"
-        type="answer"
         onChange={handleChange}
         value={answer}
       />

@@ -14,6 +14,7 @@ export const FormWrapper = styled.div`
   flex-direction: row;
   box-shadow: ${props => props.theme.boxShadow};
   border: 1px solid ${props => props.theme.body};
+  min-height: 80vh;
   border-radius: 4px;
   padding: 2em;
   & > section {

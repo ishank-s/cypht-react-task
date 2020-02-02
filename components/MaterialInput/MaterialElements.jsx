@@ -13,7 +13,7 @@ const Input = props => {
 
 export const StyledInput = styled(Input)`
   position: relative;
-  margin: 45px 0;
+  margin: 30px 0;
 
   input:focus,
   textarea:focus,
@@ -27,7 +27,7 @@ export const StyledInput = styled(Input)`
     padding: 10px 10px 10px 5px;
     font-size: 18px;
 
-    background: none;
+    background: none !important;
     border: none;
     border-bottom: 1px solid ${props => props.theme.body};
   }
@@ -47,5 +47,12 @@ export const StyledInput = styled(Input)`
     left: 5px;
     top: 10px;
     transition: 0.2s ease all;
+  }
+  /* Change Autocomplete styles in Chrome*/
+  & > input:-webkit-autofill,
+  & > input:-webkit-autofill:hover,
+  & > input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px ${props => props.theme.background} inset;
+    -webkit-text-fill-color: ${props => props.theme.body};
   }
 `;
