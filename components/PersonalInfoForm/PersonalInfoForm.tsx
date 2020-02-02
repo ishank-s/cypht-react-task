@@ -25,7 +25,8 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
     <>
       <StyledInput
         id="fullName"
-        name="Full Name"
+        name="fullName"
+        displayText="Full Name"
         onChange={handleChange}
         value={fullName}
       />
