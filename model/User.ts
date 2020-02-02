@@ -2,6 +2,6 @@ export interface User {
   fullName: string;
   email: string;
   country: string;
-  age: number;
+  age: string;
   gender: string;
 }

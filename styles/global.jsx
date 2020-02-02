@@ -11,7 +11,6 @@ export default () => (
         height: 100%;
         width: 100%;
       }
-
       body {
         margin: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",

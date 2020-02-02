@@ -6,7 +6,12 @@ import SurveyForm from "../components/SurveyForm";
 import SurveySummary from "../components/SurveySummary";
 import ThemeChangeButton from "../components/ThemeChangeButton";
 import { ThemeProvider } from "../hooks/useTheme";
-import { AppWrapper, StyledForm } from "../styles/pages/indexStyles";
+import {
+  AppWrapper,
+  FormWrapper,
+  StyledImage,
+  StyledForm
+} from "../styles/pages/indexStyles";
 import GlobalStyles from "../styles/global";
 import { useFormik } from "formik";
 import { useState } from "react";
@@ -17,7 +22,7 @@ const Home: NextPage<{ countries: Country[] }> = props => {
       fullName: "",
       email: "",
       country: "",
-      age: 0,
+      age: "",
       gender: "",
       answer: ""
     },
@@ -59,21 +64,30 @@ const Home: NextPage<{ countries: Country[] }> = props => {
       <ThemeChangeButton />
       <GlobalStyles />
       <AppWrapper>
-        <h1>Survey Bot</h1>
-        <h3>Please fill out the personal details to proceed.</h3>
-        <StyledForm onSubmit={formik.handleSubmit}>
-          {allSteps[step]}
+        <FormWrapper>
+          <section>
+            <h1>Survey Bot</h1>
+            <StyledImage></StyledImage>
+          </section>
+          <StyledForm onSubmit={formik.handleSubmit}>
+            {allSteps[step]}
 
-          {step === allSteps.length - 1 && (
-            <button type="submit">Finito!</button>
-          )}
-        </StyledForm>
-        {step > 0 && (
-          <button onClick={() => setStep(step => step - 1)}>prev</button>
-        )}
-        {step < allSteps.length - 1 && (
-          <button onClick={() => setStep(step => step + 1)}>next</button>
-        )}
+            {step === allSteps.length - 1 && (
+              <button type="submit">Finito!</button>
+            )}
+
+            {step > 0 && (
+              <button type="button" onClick={() => setStep(step => step - 1)}>
+                prev
+              </button>
+            )}
+            {step < allSteps.length - 1 && (
+              <button type="button" onClick={() => setStep(step => step + 1)}>
+                next
+              </button>
+            )}
+          </StyledForm>
+        </FormWrapper>
       </AppWrapper>
     </ThemeProvider>
   );

@@ -3,6 +3,7 @@ import { User } from "../../model/User";
 
 import React, { ChangeEvent } from "react";
 import { useFormik, Field } from "formik";
+import { StyledInput } from "../MaterialInput";
 
 type PersonalInfoFormProps = User & {
   countryList: Country[];
@@ -23,23 +24,18 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
   return (
     <>
       Personal Info form
-      <label htmlFor="fullName">fullName </label>
-      <input
+      <StyledInput
         id="fullName"
         name="fullName"
-        type="fullName"
         onChange={handleChange}
         value={fullName}
       />
-      <label htmlFor="email">Email Address</label>
-      <input
+      <StyledInput
         id="email"
         name="email"
-        type="email"
         onChange={handleChange}
         value={email}
       />
-      <label htmlFor="country">country</label>
       <select
         id="country"
         name="country"
@@ -52,19 +48,10 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
           </option>
         ))}
       </select>
-      <label htmlFor="age">age</label>
-      <input
-        id="age"
-        name="age"
-        type="age"
-        onChange={handleChange}
-        value={age}
-      />
-      <label htmlFor="gender">gender</label>
-      <input
+      <StyledInput id="age" name="age" onChange={handleChange} value={age} />
+      <StyledInput
         id="gender"
         name="gender"
-        type="gender"
         onChange={handleChange}
         value={gender}
       />

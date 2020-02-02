@@ -18,7 +18,7 @@ const ButtonIconWrapper = styled(animated.button)`
   right: 0px;
   padding: 0.5rem 0.7rem;
   z-index: 99999;
-  border: 2px solid ${props => props.theme.highLight};
+  border: 1px solid ${props => props.theme.highLight};
   width: 3rem;
   height: 3rem;
   cursor: pointer;
