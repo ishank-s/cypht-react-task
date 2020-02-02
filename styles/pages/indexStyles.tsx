@@ -10,8 +10,8 @@ export const AppWrapper = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   box-shadow: ${props => props.theme.boxShadow};
   border: 1px solid ${props => props.theme.body};
   min-height: 80vh;
@@ -24,7 +24,6 @@ export const FormWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-  justify-content: space-around;
 `;
 
 export const StyledForm = styled.form`
@@ -33,6 +32,7 @@ export const StyledForm = styled.form`
 `;
 
 export const StyledImage = styled.img`
+  margin: auto;
   width: 20em;
   height: 20em;
   content: url(${props => props.theme.botIcon});

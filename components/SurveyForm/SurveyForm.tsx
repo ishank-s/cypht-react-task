@@ -15,12 +15,7 @@ const SurveyForm: React.SFC<SurveyFormProps> = ({
   return (
     <>
       Where are you from?
-      <StyledInput
-        id="answer"
-        name="answer"
-        onChange={handleChange}
-        value={answer}
-      />
+      <StyledInput id="answer" onChange={handleChange} value={answer} />
     </>
   );
 };

@@ -9,7 +9,11 @@ import { useFormik } from "formik";
 type SummaryProps = User & Survey;
 
 const SurveySummary: React.SFC<SummaryProps> = (props: SummaryProps) => {
-  return <>Survey SurveySummary</>;
+  return (
+    <>
+      <h3>Response Summary</h3>
+    </>
+  );
 };
 
 export default SurveySummary;

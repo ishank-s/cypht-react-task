@@ -62,7 +62,7 @@ export const StyledButton = styled.button`
   padding: 1.2em;
   background: none;
   border: none;
-  color: white;
+  color: ${props => props.theme.body};
   border: 1px solid ${props => props.theme.body};
   &:hover {
     box-shadow: 7px 7px 0px 0px ${props => props.theme.body};

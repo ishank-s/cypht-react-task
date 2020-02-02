@@ -73,7 +73,7 @@ const Home: NextPage<{ countries: Country[] }> = props => {
             {allSteps[step]}
 
             {step === allSteps.length - 1 && (
-              <StyledButton type="submit">Finito!</StyledButton>
+              <StyledButton type="submit">FINITO!</StyledButton>
             )}
 
             {step > 0 && (
