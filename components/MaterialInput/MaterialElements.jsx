@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { restElement } from "babel-types";
 
 const Input = props => {
   const { className, ...restProps } = props;
@@ -22,7 +21,7 @@ export const StyledInput = styled(Input)`
   }
   & > input {
     color: ${props => props.theme.body};
-    width: 80%;
+    width: 100%;
     box-shadow: none;
     padding: 10px 10px 10px 5px;
     font-size: 18px;
@@ -55,4 +54,20 @@ export const StyledInput = styled(Input)`
     -webkit-box-shadow: 0 0 0px 1000px ${props => props.theme.background} inset;
     -webkit-text-fill-color: ${props => props.theme.body};
   }
+`;
+
+// export const StyledSelect = styled.select
+
+export const StyledButton = styled.button`
+  padding: 1.2em;
+  background: none;
+  border: none;
+  color: white;
+  border: 1px solid ${props => props.theme.body};
+  &:hover {
+    box-shadow: 7px 7px 0px 0px ${props => props.theme.body};
+    top: -10px;
+  }
+  transition: 0.2s ease-out box-shadow;
+  cursor: pointer;
 `;

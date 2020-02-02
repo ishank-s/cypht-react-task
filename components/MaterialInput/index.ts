@@ -1,1 +1,1 @@
-export { StyledInput } from "./MaterialElements";
+export { StyledInput, StyledButton } from "./MaterialElements";

@@ -15,7 +15,7 @@ import {
 import GlobalStyles from "../styles/global";
 import { useFormik } from "formik";
 import { useState } from "react";
-
+import { StyledButton } from "../components/MaterialInput";
 const Home: NextPage<{ countries: Country[] }> = props => {
   const formik = useFormik({
     initialValues: {
@@ -73,18 +73,24 @@ const Home: NextPage<{ countries: Country[] }> = props => {
             {allSteps[step]}
 
             {step === allSteps.length - 1 && (
-              <button type="submit">Finito!</button>
+              <StyledButton type="submit">Finito!</StyledButton>
             )}
 
             {step > 0 && (
-              <button type="button" onClick={() => setStep(step => step - 1)}>
-                prev
-              </button>
+              <StyledButton
+                type="button"
+                onClick={() => setStep(step => step - 1)}
+              >
+                BACK
+              </StyledButton>
             )}
             {step < allSteps.length - 1 && (
-              <button type="button" onClick={() => setStep(step => step + 1)}>
-                next
-              </button>
+              <StyledButton
+                type="button"
+                onClick={() => setStep(step => step + 1)}
+              >
+                NEXT
+              </StyledButton>
             )}
           </StyledForm>
         </FormWrapper>
