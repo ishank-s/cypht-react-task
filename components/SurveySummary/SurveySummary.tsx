@@ -11,7 +11,10 @@ type SummaryProps = User & Survey;
 const SurveySummary: React.SFC<SummaryProps> = (props: SummaryProps) => {
   return (
     <>
-      <h3>Response Summary</h3>
+      <h1>Response Summary</h1>
+      {Object.keys(props).map((data: string) => (
+        <h3>{(props as any)[data]}</h3>
+      ))}
     </>
   );
 };

@@ -28,7 +28,7 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
       <StyledInput
         id="fullName"
         name="fullName"
-        displayText="Full Name"
+        displaytext="Full Name"
         onChange={handleChange}
         value={fullName}
       />
@@ -36,7 +36,7 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
         id="email"
         name="email"
         onChange={handleChange}
-        displayText="Email"
+        displaytext="Email"
         value={email}
       />
       <label style={{ paddingLeft: "3px" }} htmlFor="country">
@@ -57,7 +57,7 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
       </StyledSelect>
       <StyledInput
         id="age"
-        displayText="Age"
+        displaytext="Age"
         name="age"
         onChange={handleChange}
         value={age}

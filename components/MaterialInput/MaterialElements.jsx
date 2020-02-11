@@ -5,7 +5,7 @@ const Input = props => {
   return (
     <div className={className}>
       <input {...restProps} />
-      <label>{props.displayText || props.name}</label>
+      <label>{props.displaytext || props.name}</label>
     </div>
   );
 };
@@ -66,6 +66,13 @@ export const StyledSelect = styled.select`
   margin: 1em 0;
   & > option {
     background: ${props => props.theme.background};
+  }
+  /* Change Autocomplete styles in Chrome*/
+  & > select:-webkit-autofill,
+  & > select:-webkit-autofill:hover,
+  & > select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px ${props => props.theme.background} inset;
+    -webkit-text-fill-color: ${props => props.theme.body};
   }
 `;
 
