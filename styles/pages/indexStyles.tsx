@@ -29,6 +29,9 @@ export const FormWrapper = styled.div`
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+  & > button {
+    margin: 1em 0px;
+  }
 `;
 
 export const StyledImage = styled.img`

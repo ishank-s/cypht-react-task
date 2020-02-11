@@ -56,7 +56,18 @@ export const StyledInput = styled(Input)`
   }
 `;
 
-// export const StyledSelect = styled.select
+export const StyledSelect = styled.select`
+  border: none;
+  background: none;
+  color: ${props => props.theme.body};
+  border-bottom: 1px solid ${props => props.theme.body};
+  padding: 1em;
+  padding-left: 0;
+  margin: 1em 0;
+  & > option {
+    background: ${props => props.theme.background};
+  }
+`;
 
 export const StyledButton = styled.button`
   padding: 1.2em;

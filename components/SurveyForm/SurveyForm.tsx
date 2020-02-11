@@ -14,8 +14,13 @@ const SurveyForm: React.SFC<SurveyFormProps> = ({
 }: SurveyFormProps) => {
   return (
     <>
-      Where are you from?
-      <StyledInput id="answer" onChange={handleChange} value={answer} />
+      <h1>Where are you from?</h1>
+      <StyledInput
+        id="answer"
+        style={{ minHeight: "25vh" }}
+        onChange={handleChange}
+        value={answer}
+      />
     </>
   );
 };

@@ -3,10 +3,11 @@ import { User } from "../../model/User";
 
 import React, { ChangeEvent } from "react";
 import { useFormik, Field } from "formik";
-import { StyledInput } from "../MaterialInput";
+import { StyledInput, StyledSelect } from "../MaterialInput";
 
 type PersonalInfoFormProps = User & {
   countryList: Country[];
+  genderList: string[];
   handleChange: (
     eventOrPath: string | ChangeEvent<any>
   ) => void | ((eventOrTextValue: string | ChangeEvent<any>) => void);
@@ -14,6 +15,7 @@ type PersonalInfoFormProps = User & {
 
 const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
   countryList,
+  genderList,
   handleChange,
   fullName,
   email,
@@ -34,9 +36,14 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
         id="email"
         name="email"
         onChange={handleChange}
+        displayText="Email"
         value={email}
       />
-      <select
+      <label style={{ paddingLeft: "3px" }} htmlFor="country">
+        Country
+      </label>
+
+      <StyledSelect
         id="country"
         name="country"
         onChange={handleChange}
@@ -47,14 +54,29 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
             {country.name}
           </option>
         ))}
-      </select>
-      <StyledInput id="age" name="age" onChange={handleChange} value={age} />
+      </StyledSelect>
       <StyledInput
+        id="age"
+        displayText="Age"
+        name="age"
+        onChange={handleChange}
+        value={age}
+      />
+      <label style={{ paddingLeft: "3px" }} htmlFor="gender">
+        Gender
+      </label>
+      <StyledSelect
         id="gender"
         name="gender"
         onChange={handleChange}
         value={gender}
-      />
+      >
+        {genderList.map(gender => (
+          <option key={gender} value={gender}>
+            {gender}
+          </option>
+        ))}
+      </StyledSelect>
     </>
   );
 };

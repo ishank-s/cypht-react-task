@@ -16,7 +16,7 @@ import GlobalStyles from "../styles/global";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { StyledButton } from "../components/MaterialInput";
-const Home: NextPage<{ countries: Country[] }> = props => {
+const Home: NextPage<{ countries: Country[]; genders: string[] }> = props => {
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -41,6 +41,7 @@ const Home: NextPage<{ countries: Country[] }> = props => {
   const allSteps = [
     <PersonalInfoForm
       countryList={props.countries}
+      genderList={props.genders}
       handleChange={handleChange}
       fullName={fullName}
       email={email}
@@ -101,7 +102,8 @@ const Home: NextPage<{ countries: Country[] }> = props => {
 
 Home.getInitialProps = async ({ req }) => {
   const countries = await fetchCountries();
-  return { countries };
+  const genders = ["Male", "Female", "Other"];
+  return { countries, genders };
 };
 
 export default Home;
