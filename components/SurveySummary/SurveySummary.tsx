@@ -1,14 +1,11 @@
 import { Formik } from "formik";
 import { Country } from "../../model/Country";
-import { User } from "../../model/User";
-import { Survey } from "../../model/Survey";
+import { Form } from "../../model/Form";
 
 import React, { ChangeEvent } from "react";
 import { useFormik } from "formik";
 
-type SummaryProps = User & Survey;
-
-const SurveySummary: React.SFC<SummaryProps> = (props: SummaryProps) => {
+const SurveySummary: React.SFC<Form> = (props: Form) => {
   return (
     <>
       <h1>Response Summary</h1>

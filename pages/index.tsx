@@ -3,6 +3,7 @@ import { Country } from "../model/Country";
 import { fetchCountries } from "../network/client";
 import PersonalInfoForm from "../components/PersonalInfoForm";
 import SurveyForm from "../components/SurveyForm";
+import ErrorMessage from "../components/ErrorMessage";
 import SurveySummary from "../components/SurveySummary";
 import ThemeChangeButton from "../components/ThemeChangeButton";
 import { ThemeProvider } from "../hooks/useTheme";
@@ -16,24 +17,30 @@ import GlobalStyles from "../styles/global";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { StyledButton } from "../components/MaterialInput";
+import { validateForm as validate } from "../validate";
+import { Form as FormValues } from "../model/Form";
+
 const Home: NextPage<{ countries: Country[]; genders: string[] }> = props => {
+  const initialValues: FormValues = {
+    fullName: "",
+    email: "",
+    country: "",
+    age: "",
+    gender: "",
+    answer: ""
+  };
+
   const formik = useFormik({
-    initialValues: {
-      fullName: "",
-      email: "",
-      country: "",
-      age: "",
-      gender: "",
-      answer: ""
-    },
+    initialValues,
+    validate,
     onSubmit: values => {
       alert(JSON.stringify(values, null, 2));
-    },
-    validate: () => {}
+    }
   });
   const {
     handleChange,
     handleSubmit,
+    errors,
     values: { fullName, email, country, age, gender, answer }
   } = formik;
 
@@ -64,6 +71,7 @@ const Home: NextPage<{ countries: Country[]; genders: string[] }> = props => {
     <ThemeProvider>
       <ThemeChangeButton />
       <GlobalStyles />
+      <ErrorMessage errors={errors} />
       <AppWrapper>
         <FormWrapper>
           <section>
