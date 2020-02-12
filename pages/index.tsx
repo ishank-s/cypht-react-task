@@ -71,7 +71,10 @@ const Home: NextPage<{ countries: Country[]; genders: string[] }> = props => {
     <ThemeProvider>
       <ThemeChangeButton />
       <GlobalStyles />
-      <ErrorMessage errors={errors} />
+      {errors &&
+        (errors.fullName || errors.email || errors.age || errors.answer) && (
+          <ErrorMessage errors={errors} />
+        )}
       <AppWrapper>
         <FormWrapper>
           <section>
