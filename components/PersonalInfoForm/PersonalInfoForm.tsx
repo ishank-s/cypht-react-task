@@ -59,6 +59,7 @@ const PersonalInfoForm: React.SFC<PersonalInfoFormProps> = ({
         id="age"
         displaytext="Age"
         name="age"
+        type="number"
         onChange={handleChange}
         value={age}
       />
